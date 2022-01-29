@@ -1,8 +1,11 @@
+import { Fragment } from "react";
+import classes from "./NotFound.module.css";
+
 const NotFound = () => {
   return (
-    <div className='centered'>
-      <p>Page not found!</p>
-    </div>
+    <Fragment>
+      <h5 className={classes.warning}>Not found anything</h5>
+    </Fragment>
   );
 };
 

@@ -1,0 +1,42 @@
+.cart-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 30rem;
+  overflow: scroll;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+.actions {
+  text-align: center;
+}
+
+.actions button {
+  cursor: pointer;
+  background-color: var(--sixth-color);
+  border: 1px solid var(--fifth-color);
+  padding: 0.5rem 2rem;
+  border-radius: 5px;
+  margin-left: 1rem;
+  color: var(--fifth-color);
+}
+
+.actions button:hover,
+.actions button:active {
+  background-color: var(--fifth-color);
+  color: var(--sixth-color);
+  border: 1px solid var(--sixth-color);
+}
+
+.actions .button {
+  background-color: var(--third-color);
+  color: var(--fifth-color);
+}

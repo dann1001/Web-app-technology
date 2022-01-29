@@ -1,0 +1,29 @@
+.carts-holder {
+  width: 90%;
+  margin: 0 auto;
+}
+.img-holder {
+  border-radius: 8px;
+  background: var(--fifth-color);
+  box-shadow: inset 5px 5px 10px #b3b3b3, inset -5px -5px 10px #ffffff;
+}
+
+.title {
+  font-size: calc(2.5rem + 1vw);
+  text-transform: capitalize;
+}
+.price {
+  font-size: calc(2rem + 1vw);
+}
+
+@media (max-width: 1070px) {
+  .title {
+    font-size: 2.5rem;
+  }
+  .price {
+    font-size: 2rem;
+  }
+  .addbutton {
+    font-size: 1.5rem;
+  }
+}

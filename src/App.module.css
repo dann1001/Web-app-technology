@@ -1,0 +1,73 @@
+/* Global Style */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  --header1: calc(2rem + 1vw);
+  --header2: calc(3.5rem + 1vw);
+  --header3: calc(4rem + 1vw);
+  --header4: calc(2.4rem + 1vw);
+  --text: calc(0.3rem + 1vw);
+  --mainfont: "Open Sans Condensed", sans-serif;
+  --primary-color: #3e4647;
+  --secondry-color: #dedad7;
+  --third-color: #0f0d35;
+  --fourth-color: #393b69;
+  --fifth-color: #f5f7ef;
+  --sixth-color: #454c5e;
+  --seventh-color: #857671;
+  --eighth-color: #535353;
+  --ninth-color: #8a8a8a;
+}
+body {
+  font-family: var(--mainfont);
+}
+
+h2 {
+  font-size: var(--header3);
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+}
+h3 {
+  font-size: var(--header4);
+  margin: 2rem 0 5rem;
+  font-weight: lighter;
+}
+h4,
+h5 {
+  font-size: var(--header4);
+}
+li,
+button,
+input,
+label,
+p {
+  font-size: var(--text);
+}
+a {
+  text-decoration: none;
+  color: currentColor;
+}
+.st-bg {
+  background: var(--fifth-color);
+  background-size: cover;
+  width: 100%;
+}
+
+.container-light {
+  max-width: 95%;
+  background-color: var(--primary-color);
+  margin: 0 auto;
+  color: white;
+}
+
+.container-dark {
+  max-width: 95%;
+  background-color: var(--secondry-color);
+  margin: 0 auto;
+  color: var(--eighth-color);
+}

@@ -1,32 +1,57 @@
-import { Route, Switch, Redirect } from 'react-router-dom';
+import React, { Suspense } from "react";
+import { Route, Routes } from "react-router-dom";
+import Classes from "./App.module.css";
+import Header from "./UI/Header";
+import Cart from "./Cart/Cart";
+import { useState } from "react";
+import CartProvider from "./store/Cart-Provider";
+import classes from "./App.module.css";
+import NotFound from "./Pages/NotFound";
+import Loading from "./UI/Loading";
 
-import AllQuotes from './pages/AllQuotes';
-import QuoteDetail from './pages/QuoteDetail';
-import NewQuote from './pages/NewQuote';
-import NotFound from './pages/NotFound';
-import Layout from './components/layout/Layout';
+const MainPage = React.lazy(() => import("./Pages/MainPage"));
+const ShoesPage = React.lazy(() => import("./Pages/ShoesPage"));
+const BagsPage = React.lazy(() => import("./Pages/BagsPage"));
+const WatchesPage = React.lazy(() => import("./Pages/WatchesPage"));
 
 function App() {
+  const [cartIsShown, setCartIsShown] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
+
+  const showCartHandler = () => {
+    setCartIsShown(true);
+  };
+  const hideCartHandler = () => {
+    setCartIsShown(false);
+  };
+  const modeChanger = () => {
+    setDarkMode(!darkMode);
+  };
+
   return (
-    <Layout>
-      <Switch>
-        <Route path='/' exact>
-          <Redirect to='/quotes' />
-        </Route>
-        <Route path='/quotes' exact>
-          <AllQuotes />
-        </Route>
-        <Route path='/quotes/:quoteId'>
-          <QuoteDetail />
-        </Route>
-        <Route path='/new-quote'>
-          <NewQuote />
-        </Route>
-        <Route path='*'>
-          <NotFound />
-        </Route>
-      </Switch>
-    </Layout>
+    <CartProvider>
+      <Suspense fallback={<Loading></Loading>}>
+        <div className={Classes["st-bg"]}>
+          <div
+            className={
+              darkMode
+                ? `${classes["container-dark"]}`
+                : `${classes["container-light"]}`
+            }
+          >
+            {cartIsShown && <Cart onHide={hideCartHandler} />}
+            <Header onShow={showCartHandler} onMode={modeChanger} />
+            <Routes>
+              <Route path="/" element={<MainPage />}></Route>
+              <Route path="/shoes-page" element={<ShoesPage />}></Route>
+              <Route path="/bags-page" element={<BagsPage />}></Route>
+              <Route path="/watches-page" element={<WatchesPage />}></Route>
+              <Route path="*" element={<NotFound />}></Route>
+            </Routes>
+          </div>
+        </div>
+      </Suspense>
+    </CartProvider>
   );
 }
 

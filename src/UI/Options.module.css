@@ -1,0 +1,27 @@
+.options {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 6rem;
+  font-size: calc(5rem + 1vw);
+  font-weight: bolder;
+}
+.seprator {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-top: 5rem;
+}
+.line {
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  font-size: calc(2rem + 1vw);
+}
+.underline {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  height: 1px;
+  width: 200px;
+}
