@@ -1,7 +1,11 @@
-import Counter from './components/Counter';
+import Appbar from './layout/Header/Appbar';
 
 function App() {
-  return <div>hi</div>;
+  return (
+    <div>
+      <Appbar />
+    </div>
+  );
 }
 
 export default App;
