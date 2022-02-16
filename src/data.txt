@@ -1,0 +1,20 @@
+const DUMMY_DATA = [
+  {
+    name: 'Apple MacBook Air',
+    id: 'a1',
+    price: 1999,
+    describtion: 'Fast and new ',
+  },
+  {
+    name: 'Apple MacBook Air 2',
+    id: 'a2',
+    price: 2999,
+    describtion: 'Fast  ',
+  },
+  {
+    name: 'Apple MacBook Air 3',
+    id: 'a3',
+    price: 2499,
+    describtion: 'Fast and good price ',
+  },
+];
